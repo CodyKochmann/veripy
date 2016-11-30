@@ -2,7 +2,7 @@
 # @Author: cody
 # @Date:   2016-11-30 14:28:01
 # @Last Modified 2016-11-30
-# @Last Modified time: 2016-11-30 15:58:13
+# @Last Modified time: 2016-11-30 16:01:48
 
 # force assertions to be enabled
 try:
@@ -113,21 +113,3 @@ class require:
         assert all(isinstance(x, type) for x in args), "Require.any_of() needs its arguments to be a 'type'"
         assert any(isinstance(i, t) for t in args), "recieved: {} and needed one of these: {}".format(type(i),args)
 
-
-
-
-
-
-
-
-
-
-
-
-
-require.any_of(int(), str, int)
-
-l = [i for i in range(10)]
-
-require.contains_only(l,int)
-require.iterable(0)
