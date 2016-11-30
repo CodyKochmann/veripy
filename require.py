@@ -2,7 +2,7 @@
 # @Author: cody
 # @Date:   2016-11-30 14:28:01
 # @Last Modified 2016-11-30
-# @Last Modified time: 2016-11-30 16:01:48
+# @Last Modified time: 2016-11-30 16:09:11
 
 # force assertions to be enabled
 try:
@@ -110,6 +110,6 @@ class require:
         """ assertion that mandates that the object is one of any of the given types """
         self.tuple(args)
         self.not_empty(args)
-        assert all(isinstance(x, type) for x in args), "Require.any_of() needs its arguments to be a 'type'"
+        self.contains_only(args,type)
         assert any(isinstance(i, t) for t in args), "recieved: {} and needed one of these: {}".format(type(i),args)
 
