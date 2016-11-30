@@ -2,7 +2,7 @@
 # @Author: cody
 # @Date:   2016-11-30 14:28:01
 # @Last Modified 2016-11-30
-# @Last Modified time: 2016-11-30 16:09:11
+# @Last Modified time: 2016-11-30 16:11:16
 
 # force assertions to be enabled
 try:
@@ -99,7 +99,7 @@ class require:
         self.not_empty(i)
         self.type(mandated_type)
         for x in i:
-            assert isinstance(x, mandated_type), "found: {} when {} were required".format(type(x),mandated_type)
+            assert isinstance(x, mandated_type), "found: {} required: {}".format(type(x),mandated_type)
 
     #============================================================
     # assertions for content in the objects
