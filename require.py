@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: cody
 # @Date:   2016-11-30 14:28:01
-# @Last Modified 2016-11-30
-# @Last Modified time: 2016-11-30 16:11:16
+# @Last Modified 2016-12-01
+# @Last Modified time: 2016-12-01 11:32:27
 
 # force assertions to be enabled
 try:
@@ -112,4 +112,6 @@ class require:
         self.not_empty(args)
         self.contains_only(args,type)
         assert any(isinstance(i, t) for t in args), "recieved: {} and needed one of these: {}".format(type(i),args)
+
+
 
