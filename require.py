@@ -2,7 +2,7 @@
 # @Author: cody
 # @Date:   2016-11-30 14:28:01
 # @Last Modified 2016-12-01
-# @Last Modified time: 2016-12-01 11:32:27
+# @Last Modified time: 2016-12-01 12:10:48
 
 # force assertions to be enabled
 try:
@@ -22,66 +22,101 @@ class require:
     #============================================================
 
     @classmethod
-    def function(self,i):
+    def function(self,*args):
         """ assertion that mandates a function """
-        assert callable(i), self.__needed(callable,i)
+        self.tuple(args)
+        self.not_empty(args)
+        for i in args:
+            assert callable(i), self.__needed(callable,i)
     @classmethod
-    def type(self,i):
+    def type(self,*args):
         """ assertion that mandates a 'type' object """
-        assert isinstance(i, type), self.__needed(type(),i)
+        self.tuple(args)
+        self.not_empty(args)
+        for i in args:
+            assert isinstance(i, type), self.__needed(type(),i)
     @classmethod
-    def str(self,i):
+    def str(self,*args):
         """ assertion that mandates a str """
-        assert isinstance(i, str), self.__needed(str(),i)
+        self.tuple(args)
+        self.not_empty(args)
+        for i in args:
+            assert isinstance(i, str), self.__needed(str(),i)
     @classmethod
-    def float(self,i):
+    def float(self,*args):
         """ assertion that mandates a float """
-        assert isinstance(i, float), self.__needed(float(),i)
+        self.tuple(args)
+        self.not_empty(args)
+        for i in args:
+            assert isinstance(i, float), self.__needed(float(),i)
     @classmethod
-    def int(self,i):
+    def int(self,*args):
         """ assertion that mandates a int """
-        assert isinstance(i, int), self.__needed(int(),i)
+        self.tuple(args)
+        self.not_empty(args)
+        for i in args:
+            assert isinstance(i, int), self.__needed(int(),i)
     @classmethod
-    def list(self,i):
+    def list(self,*args):
         """ assertion that mandates a list """
-        assert isinstance(i, list), self.__needed(list(),i)
+        self.tuple(args)
+        self.not_empty(args)
+        for i in args:
+            assert isinstance(i, list), self.__needed(list(),i)
     @classmethod
-    def dict(self,i):
+    def dict(self,*args):
         """ assertion that mandates a dict """
-        assert isinstance(i, dict), self.__needed(dict(),i)
+        self.tuple(args)
+        self.not_empty(args)
+        for i in args:
+            assert isinstance(i, dict), self.__needed(dict(),i)
     @classmethod
-    def tuple(self,i):
+    def tuple(self,*args):
         """ assertion that mandates a tuple """
-        assert isinstance(i, tuple), self.__needed(tuple(),i)
+        assert isinstance(args, tuple), self.__needed(tuple(),args)
+        self.not_empty(args)
+        for i in args:
+            assert isinstance(i, tuple), self.__needed(tuple(),i)
     @classmethod
-    def bytearray(self,i):
+    def bytearray(self,*args):
         """ assertion that mandates a bytearray """
-        assert isinstance(i, bytearray), self.__needed(bytearray(),i)
+        self.tuple(args)
+        self.not_empty(args)
+        for i in args:
+            assert isinstance(i, bytearray), self.__needed(bytearray(),i)
 
     #============================================================
     # assertions for content in the objects
     #============================================================
 
     @classmethod
-    def not_empty(self,i):
+    def not_empty(self,*args):
         """ assertion that mandates the length is not 0 """
-        # test that it supports len()
-        len(i)
-        assert len(i), "the given {} can not be empty".format(type(i))
+        assert isinstance(args, tuple), self.__needed(tuple(),args)
+        assert len(args), "the given {} can not be empty".format(type(args))
+        for i in args:
+            # test that it supports len()
+            len(i)
+            assert len(i), "the given {} can not be empty".format(type(i))
     @classmethod
-    def is_empty(self,i):
+    def is_empty(self,*args):
         """ assertion that mandates an empty object with length of 0 """
-        # test that it supports len()
-        len(i)
-        assert len(i) == 0, "the given {} must be empty".format(type(i))
+        self.tuple(args)
+        self.not_empty(args)
+        for i in args:
+            # test that it supports len()
+            len(i)
+            assert len(i) == 0, "the given {} must be empty".format(type(i))
 
     #============================================================
     # assertions for iterables
     #============================================================
 
     @classmethod
-    def iterable(self,i):
+    def iterable(self,*args):
         """ assertion that mandates a iterable object """
+        self.tuple(args)
+        self.not_empty(args)
         def is_iterable(i):
             output = False
             try:
@@ -90,7 +125,8 @@ class require:
             except:
                 pass
             return output
-        assert is_iterable(i), "iterable object required, found: {}".format(type(i))
+        for i in args:
+            assert is_iterable(i), "iterable object required, found: {}".format(type(i))
 
     @classmethod
     def contains_only(self,i,mandated_type):
@@ -112,6 +148,4 @@ class require:
         self.not_empty(args)
         self.contains_only(args,type)
         assert any(isinstance(i, t) for t in args), "recieved: {} and needed one of these: {}".format(type(i),args)
-
-
 
