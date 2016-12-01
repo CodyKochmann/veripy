@@ -13,7 +13,7 @@ Shorthand asserts for those who love predictable code but dont have time for wri
 | `require.list()` | list | `require.list(['hello world'])` |
 | `require.dict()` | dict | `require.dict({"hello":"world"})` |
 | `require.tuple()` | tuple | `require.tuple((1,2,3,4))` |
-| `require.bytearray()` | bytearray | `require.bytearray(bytearray("hello world"))` |
+| `require.bytearray()` | bytearray | `require.bytearray(bytearray("hello"))` |
 | `require.iterable()` | iterable | `require.not_empty([1,2,3,4])` |
 | `require.not_empty()` | not empty | `require.is_empty([])` |
 | `require.is_empty()` | empty | `require.iterable(range(4))` |
