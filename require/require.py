@@ -2,12 +2,14 @@
 # @Author: cody
 # @Date:   2016-11-30 14:28:01
 # @Last Modified 2016-12-02
-# @Last Modified time: 2016-12-02 12:42:19
+# @Last Modified time: 2016-12-02 13:16:19
+
+from logging import warning
 
 # force assertions to be enabled
 try:
     assert False
-    exit("Error: enable assertions to use {}".format(__file__))
+    warning(" 'require' does not support running with assertions disabled")
 except AssertionError:
     pass
 

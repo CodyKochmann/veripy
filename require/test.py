@@ -2,7 +2,7 @@
 # @Author: cody
 # @Date:   2016-12-01 11:32:54
 # @Last Modified 2016-12-02
-# @Last Modified time: 2016-12-02 12:28:58
+# @Last Modified time: 2016-12-02 13:09:51
 
 """
 These are the examples used on the README's table that are
@@ -48,3 +48,5 @@ if __name__ == "__main__":
     require.not_empty([1, 2], [3, 4])
     require.is_empty([], {})
     require.iterable(range(4), "hello")
+
+    print("done")
