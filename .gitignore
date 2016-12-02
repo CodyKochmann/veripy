@@ -2,3 +2,4 @@
 */.hypothesis
 .idea
 */.idea
+*.pyc
