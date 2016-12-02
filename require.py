@@ -2,7 +2,7 @@
 # @Author: cody
 # @Date:   2016-11-30 14:28:01
 # @Last Modified 2016-12-01
-# @Last Modified time: 2016-12-01 12:10:48
+# @Last Modified time: 2016-12-01 19:30:30
 
 # force assertions to be enabled
 try:
@@ -14,7 +14,6 @@ except AssertionError:
 class require:
     @classmethod
     def __needed(self,type_needed,obj_recieved):
-        self.type(type_needed)
         return "\n\n\targ needs to be {}, not {}\n".format(type(type_needed),type(obj_recieved))
 
     #============================================================
@@ -34,7 +33,7 @@ class require:
         self.tuple(args)
         self.not_empty(args)
         for i in args:
-            assert isinstance(i, type), self.__needed(type(),i)
+            assert isinstance(i, type), self.__needed(type(str),i)
     @classmethod
     def str(self,*args):
         """ assertion that mandates a str """
