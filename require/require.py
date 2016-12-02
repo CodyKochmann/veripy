@@ -2,7 +2,7 @@
 # @Author: cody
 # @Date:   2016-11-30 14:28:01
 # @Last Modified 2016-12-02
-# @Last Modified time: 2016-12-02 12:27:15
+# @Last Modified time: 2016-12-02 12:42:19
 
 # force assertions to be enabled
 try:
@@ -20,9 +20,9 @@ class require:
             type(obj_recieved)
         )
 
-    #============================================================
-    # assertions for types of objects
-    #============================================================
+    # ===========================================
+    #      assertions for types of objects
+    # ===========================================
 
     @classmethod
     def function(self, *args):
@@ -96,9 +96,9 @@ class require:
         for i in args:
             assert isinstance(i, bytearray), self.__needed(bytearray(), i)
 
-    #============================================================
-    # assertions for content in the objects
-    #============================================================
+    # ===============================================
+    #      assertions for content in the objects
+    # ===============================================
 
     @classmethod
     def not_empty(self, *args):
@@ -120,9 +120,9 @@ class require:
             len(i)
             assert len(i) == 0, "the given {} must be empty".format(type(i))
 
-    #============================================================
-    # assertions for iterables
-    #============================================================
+    # ===================================
+    #      assertions for iterables
+    # ===================================
 
     @staticmethod
     def __is_iterable(i):
@@ -153,11 +153,14 @@ class require:
         self.not_empty(i)
         self.type(mandated_type)
         for x in i:
-            assert isinstance(x, mandated_type), "found: {} required: {}".format(type(x),mandated_type)
+            test = isinstance(x, mandated_type)
+            assert test, "found: {} required: {}".format(
+                type(x),
+                mandated_type)
 
-    #============================================================
-    # assertions for content in the objects
-    #============================================================
+    # ================================================
+    #      assertions for content in the objects
+    # ================================================
 
     @classmethod
     def any_of(self, i, *args):
