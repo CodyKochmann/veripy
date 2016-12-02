@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 # @Author: cody
 # @Date:   2016-12-01 11:32:54
-# @Last Modified 2016-12-01
-# @Last Modified time: 2016-12-01 12:13:18
+# @Last Modified 2016-12-02
+# @Last Modified time: 2016-12-02 12:28:58
 
 """
-These are the examples used on the README's table.
+These are the examples used on the README's table that are
+used to test the basic functionality of require.
 """
 
 from require import require
@@ -16,26 +17,26 @@ if __name__ == "__main__":
     #   Test that singular arguments work correctly
     #--------------------------------------------------------
 
-    require.function(lambda:"hello")
+    require.function(lambda: "hello")
     require.type(type(0))
     require.str("hello world")
     require.float(0.0)
     require.int(3)
     require.list(['hello world'])
-    require.dict({"hello":"world"})
-    require.tuple((1,2,3,4))
+    require.dict({"hello": "world"})
+    require.tuple((1, 2, 3, 4))
     require.bytearray(bytearray("hello world"))
-    require.not_empty([1,2,3,4])
+    require.not_empty([1, 2, 3, 4])
     require.is_empty([])
     require.iterable(range(4))
-    require.contains_only([1,2,3,4], int)
+    require.contains_only([1, 2, 3, 4], int)
     require.any_of(4, int, float)
 
     #--------------------------------------------------------
     #   test that each method can take multiple arguments
     #--------------------------------------------------------
 
-    require.function(lambda:"hello", lambda:"world")
+    require.function(lambda: "hello", lambda: "world")
     require.type(type(0), type("hi"))
     require.str("hello", "world")
     require.float(0.0, 5.4)
