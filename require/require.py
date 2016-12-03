@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: cody
 # @Date:   2016-11-30 14:28:01
-# @Last Modified 2016-12-02
-# @Last Modified time: 2016-12-02 13:16:19
+# @Last Modified 2016-12-03
+# @Last Modified time: 2016-12-03 12:26:58
 
 from logging import warning
 
@@ -173,7 +173,7 @@ class require:
         self.not_empty(args)
         self.contains_only(args, type)
         test = any(isinstance(i, t) for t in args)
-        assert test, "recieved: {} and needed one of these: {}".format(
+        assert test, "recieved: {} instead of: {}".format(
             type(i),
             args
         )
