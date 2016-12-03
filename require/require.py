@@ -2,7 +2,7 @@
 # @Author: cody
 # @Date:   2016-11-30 14:28:01
 # @Last Modified 2016-12-03
-# @Last Modified time: 2016-12-03 12:26:58
+# @Last Modified time: 2016-12-03 12:28:55
 
 from logging import warning
 
@@ -139,7 +139,7 @@ class require:
 
     @classmethod
     def iterable(self, *args):
-        """ assertion that mandates a iterable object """
+        """ asserts that the given arguments are iterable """
         self.tuple(args)
         self.not_empty(args)
         for i in args:
