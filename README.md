@@ -19,3 +19,11 @@ Shorthand asserts for those who love predictable code but dont have time for wri
 | `require.is_empty()` | empty | `require.iterable(range(4))` |
 | `require.contains_only()` | iterable and contains only one type | `require.contains_only([1,2,3,4], int)` |
 | `require.any_of()` | one of the following types | `require.any_of(4, int, float)` |
+
+### Upcoming Features:
+
+| Name | Description |
+| :--- | :--- |
+| `require.dir_path()` | confirms that the given string is a path to a directory |
+| `require.file_path()` | confirms that the given string is a path to a file |
+| `require.file()` | confirms that the given object is a file |

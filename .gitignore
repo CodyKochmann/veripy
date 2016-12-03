@@ -6,3 +6,4 @@
 *.pyo
 __pycache__
 */__pycache__
+tmp.py
