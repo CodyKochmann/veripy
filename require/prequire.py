@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
 # @Author: cody
 # @Date:   2016-11-30 14:28:01
-# @Last Modified 2016-12-03
-# @Last Modified time: 2016-12-03 12:28:55
+# @Last Modified 2016-12-05
+# @Last Modified time: 2016-12-05 13:19:13
 
 from logging import warning
 
 # force assertions to be enabled
 try:
     assert False
-    warning(" 'require' does not support running with assertions disabled")
+    warning(" 'prequire' does not support running with assertions disabled")
 except AssertionError:
     pass
 
 
-class require:
+class prequire:
     @classmethod
     def __needed(self, type_needed, obj_recieved):
         return "\n\n\targ needs to be {}, not {}\n".format(
