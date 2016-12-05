@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # @Author: cody
 # @Date:   2016-12-01 19:07:10
-# @Last Modified 2016-12-02
-# @Last Modified time: 2016-12-02 12:11:43
+# @Last Modified 2016-12-05
+# @Last Modified time: 2016-12-05 13:24:00
 
 """
     This is where hypothesis will be taking its turn
-    making sure that require.py behaves the way it
+    making sure that prequire.py behaves the way it
     should with the correct inputs.
 """
 
@@ -17,7 +17,7 @@ from hypothesis import (
     given
 )
 
-from require import require
+from prequire import prequire
 
 test_samples = 2048
 
@@ -29,21 +29,21 @@ with settings(
     @given(arg_list=st.lists(min_size=1, elements=st.text()))
     def test_str(arg_list):
         try:
-            require.str(*arg_list)
+           prequire.str(*arg_list)
         except AssertionError:
             pass
 
     @given(arg_list=st.lists(min_size=1, elements=st.floats()))
     def test_float(arg_list):
         try:
-            require.float(*arg_list)
+           prequire.float(*arg_list)
         except AssertionError:
             pass
 
     @given(arg_list=st.lists(min_size=1, elements=st.integers()))
     def test_int(arg_list):
         try:
-            require.int(*arg_list)
+           prequire.int(*arg_list)
         except AssertionError:
             pass
 
@@ -52,7 +52,7 @@ with settings(
         elements=st.floats())))
     def test_list(arg_list):
         try:
-            require.list(*arg_list)
+           prequire.list(*arg_list)
         except AssertionError:
             pass
 
@@ -61,7 +61,7 @@ with settings(
         elements=st.tuples())))
     def test_tuple(arg_list):
         try:
-            require.tuple(*arg_list)
+           prequire.tuple(*arg_list)
         except AssertionError:
             pass
 
