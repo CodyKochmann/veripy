@@ -2,19 +2,19 @@
 # @Author: cody
 # @Date:   2016-11-30 14:28:01
 # @Last Modified 2016-12-05
-# @Last Modified time: 2016-12-05 13:19:13
+# @Last Modified time: 2016-12-05 15:56:11
 
 from logging import warning
 
 # force assertions to be enabled
 try:
     assert False
-    warning(" 'prequire' does not support running with assertions disabled")
+    warning(" 'veripy' does not support running with assertions disabled")
 except AssertionError:
     pass
 
 
-class prequire:
+class veripy:
     @classmethod
     def __needed(self, type_needed, obj_recieved):
         return "\n\n\targ needs to be {}, not {}\n".format(

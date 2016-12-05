@@ -2,11 +2,11 @@
 # @Author: cody
 # @Date:   2016-12-01 19:07:10
 # @Last Modified 2016-12-05
-# @Last Modified time: 2016-12-05 13:24:00
+# @Last Modified time: 2016-12-05 15:55:56
 
 """
     This is where hypothesis will be taking its turn
-    making sure that prequire.py behaves the way it
+    making sure that veripy.py behaves the way it
     should with the correct inputs.
 """
 
@@ -17,7 +17,7 @@ from hypothesis import (
     given
 )
 
-from prequire import prequire
+from veripy import veripy
 
 test_samples = 2048
 
@@ -29,21 +29,21 @@ with settings(
     @given(arg_list=st.lists(min_size=1, elements=st.text()))
     def test_str(arg_list):
         try:
-           prequire.str(*arg_list)
+           veripy.str(*arg_list)
         except AssertionError:
             pass
 
     @given(arg_list=st.lists(min_size=1, elements=st.floats()))
     def test_float(arg_list):
         try:
-           prequire.float(*arg_list)
+           veripy.float(*arg_list)
         except AssertionError:
             pass
 
     @given(arg_list=st.lists(min_size=1, elements=st.integers()))
     def test_int(arg_list):
         try:
-           prequire.int(*arg_list)
+           veripy.int(*arg_list)
         except AssertionError:
             pass
 
@@ -52,7 +52,7 @@ with settings(
         elements=st.floats())))
     def test_list(arg_list):
         try:
-           prequire.list(*arg_list)
+           veripy.list(*arg_list)
         except AssertionError:
             pass
 
@@ -61,7 +61,7 @@ with settings(
         elements=st.tuples())))
     def test_tuple(arg_list):
         try:
-           prequire.tuple(*arg_list)
+           veripy.tuple(*arg_list)
         except AssertionError:
             pass
 
