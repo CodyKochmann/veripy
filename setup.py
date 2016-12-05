@@ -7,7 +7,7 @@ setup(
   author = 'Cody Kochmann',
   author_email = 'kochmanncody@gmail.com',
   url = 'https://github.com/CodyKochmann/prequire',
-  download_url = 'https://github.com/peterldowns/mypackage/tarball/0.1',
+  download_url = 'https://github.com/CodyKochmann/prequire/tarball/0.1',
   keywords = ['assert', 'shorthand', 'contract', 'require', 'prequire'], # arbitrary keywords
   classifiers = [],
 )
