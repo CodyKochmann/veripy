@@ -2,7 +2,7 @@
 # @Author: cody
 # @Date:   2016-12-01 11:32:54
 # @Last Modified 2016-12-15
-# @Last Modified time: 2016-12-15 12:20:47
+# @Last Modified time: 2016-12-15 12:28:53
 
 """
 These are the examples used on the README's table that are
@@ -80,5 +80,10 @@ if __name__ == "__main__":
     veripy.file_path(*file_paths)
     veripy.dir_path(*dir_dirs)
     veripy.file(*dir_files)
+
+    # testing the document examples
+    veripy.file_path("veripy.py", "./test.py")
+    veripy.dir_path("./", "../")
+    veripy.file(open("test.py","r"), open("veripy.py","r"))
 
     print("success")
