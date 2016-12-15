@@ -1,7 +1,7 @@
 # veripy
 Shorthand asserts for those who love predictable code but don't have time for writing every assert in the world.
 
-##### Current Version: 2016.12.15
+##### Current Version: 2016.12.16
 
 ---
 

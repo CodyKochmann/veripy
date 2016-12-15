@@ -2,7 +2,7 @@
 # @Author: cody
 # @Date:   2016-11-30 14:28:01
 # @Last Modified 2016-12-15
-# @Last Modified time: 2016-12-15 11:59:32
+# @Last Modified time: 2016-12-15 13:14:33
 
 from os.path import (
     isfile,
@@ -216,4 +216,4 @@ class veripy:
         self.contains_only(args, str)
         e = lambda i: "\n\n\tinvalid directory path: {}\n".format(i)
         for i in args:
-            assert dir(i), e(i)
+            assert isdir(i), e(i)
