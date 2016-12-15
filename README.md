@@ -3,6 +3,12 @@ Shorthand asserts for those who love predictable code but don't have time for wr
 
 ##### Current Version: 2016.12.15
 
+---
+
+### Installation
+
+```pip install veripy```
+
 ### Methods
 
 | Name | Asserts the argument is: | Example Usage |
