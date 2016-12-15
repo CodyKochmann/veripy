@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
 # @Author: cody
 # @Date:   2016-11-30 14:28:01
-# @Last Modified 2016-12-05
-# @Last Modified time: 2016-12-05 15:56:11
+# @Last Modified 2016-12-15
+# @Last Modified time: 2016-12-15 11:59:32
+
+from os.path import (
+    isfile,
+    isdir
+)
 
 from logging import warning
 
@@ -177,3 +182,38 @@ class veripy:
             type(i),
             args
         )
+
+    # =====================================================
+    #      assertions for paths, directories and files
+    # =====================================================
+
+    @classmethod
+    def file(self, *args):
+        """ assertion for file objects """
+        self.tuple(args)
+        self.not_empty(args)
+        e = lambda i: "\n\n\targ needs to be file, not {}\n".format(
+            type(i)
+        )
+        for i in args:
+            assert isinstance(i, file), e(i)
+
+    @classmethod
+    def file_path(self, *args):
+        """ asserts the args are paths to actual files """
+        self.tuple(args)
+        self.not_empty(args)
+        self.contains_only(args, str)
+        e = lambda i: "\n\n\tinvalid file path: {}\n".format(i)
+        for i in args:
+            assert isfile(i), e(i)
+
+    @classmethod
+    def dir_path(self, *args):
+        """ asserts the args are paths to directories """
+        self.tuple(args)
+        self.not_empty(args)
+        self.contains_only(args, str)
+        e = lambda i: "\n\n\tinvalid directory path: {}\n".format(i)
+        for i in args:
+            assert dir(i), e(i)
