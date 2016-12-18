@@ -1,0 +1,11 @@
+cody@G505:~/tmp$ python garbage.py 
+running 1000000 tests on veripy.type
+running 1000000 tests on veripy.str
+running 1000000 tests on veripy.float
+running 1000000 tests on veripy.int
+running 1000000 tests on veripy.list
+running 1000000 tests on veripy.dict
+running 1000000 tests on veripy.tuple
+running 1000000 tests on veripy.bytearray
+Killed
+

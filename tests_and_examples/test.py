@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: cody
 # @Date:   2016-12-01 11:32:54
-# @Last Modified 2016-12-15
-# @Last Modified time: 2016-12-15 12:28:53
+# @Last Modified 2016-12-16
+# @Last Modified time: 2016-12-16 13:48:07
 
 """
 These are the examples used on the README's table that are
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     veripy.function(lambda: "hello", lambda: "world")
     veripy.type(type(0), type("hi"))
     veripy.str("hello", "world")
-    veripy.float(0.0, 5.4)
+    veripy.float(0.0, 5.4, 0)
     veripy.int(3, 17)
     veripy.list(['hello'], ['world'])
     veripy.dict({"hello": 1}, {"world": 2})

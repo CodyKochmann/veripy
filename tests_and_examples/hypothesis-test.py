@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: cody
 # @Date:   2016-12-01 19:07:10
-# @Last Modified 2016-12-05
-# @Last Modified time: 2016-12-05 15:55:56
+# @Last Modified 2016-12-15
+# @Last Modified time: 2016-12-15 17:10:07
 
 """
     This is where hypothesis will be taking its turn
@@ -22,7 +22,8 @@ from veripy import veripy
 test_samples = 2048
 
 with settings(
-        verbosity=Verbosity.normal,
+        verbosity=Verbosity.verbose
+        ,
         min_satisfying_examples=test_samples,
         max_examples=test_samples):
 
