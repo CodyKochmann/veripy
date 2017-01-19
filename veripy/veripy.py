@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: cody
 # @Date:   2016-11-30 14:28:01
-# @Last Modified 2017-01-19
-# @Last Modified time: 2017-01-19 14:57:18
+# @Last Modified 2016-12-15
+# @Last Modified time: 2016-12-15 13:14:33
 
 from os.path import (
     isfile,
@@ -18,22 +18,6 @@ try:
 except AssertionError:
     pass
 
-def fails_correctly(code_to_run, error_needed):
-    """ verifies that the correct error is thrown """
-    veripy.function(code_to_run)
-    assert dir(Exception) == dir(error_needed), 'error_needed needs to be an Exctption'
-    out = False
-    try:
-        code_to_run()
-    except error_needed:
-        out = True
-        pass
-    return out
-
-def generator_len(g):
-    """ returns the length of a generator """
-    veripy.generator(g)
-    return sum(1 for i in g) + 1
 
 class veripy:
     @classmethod
@@ -118,32 +102,6 @@ class veripy:
         self.not_empty(args)
         for i in args:
             assert isinstance(i, bytearray), self.__needed(bytearray(), i)
-
-    @classmethod
-    def generator(self, *args):
-        """ assertion that mandates a generator """
-        self.tuple(args)
-        self.not_empty(args)
-        # sample generator
-        g = (i for i in range(0))
-        # generator type
-        gt = type(g)
-        for i in args:
-            assert type(i) == gt, self.__needed(g, i)
-
-    @classmethod
-    def empty_generator(self, *args):
-        """ assertion that mandates a generator """
-        self.tuple(args)
-        self.not_empty(args)
-        for i in args:
-            self.generator(i)
-            assert fails_correctly(
-                lambda:i.next(),
-                StopIteration
-            ), "veripy: this generator still contains {} values".format(
-                generator_len(i)
-            )
 
     # ===============================================
     #      assertions for content in the objects
@@ -259,4 +217,3 @@ class veripy:
         e = lambda i: "\n\n\tinvalid directory path: {}\n".format(i)
         for i in args:
             assert isdir(i), e(i)
-
