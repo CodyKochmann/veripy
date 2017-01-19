@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: cody
 # @Date:   2016-12-01 11:32:54
-# @Last Modified 2016-12-16
-# @Last Modified time: 2016-12-16 13:48:07
+# @Last Modified 2017-01-19
+# @Last Modified time: 2017-01-19 14:57:50
 
 """
 These are the examples used on the README's table that are
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     veripy.function(lambda: "hello", lambda: "world")
     veripy.type(type(0), type("hi"))
     veripy.str("hello", "world")
-    veripy.float(0.0, 5.4, 0)
+    veripy.float(0.0, 5.4, 0.5)
     veripy.int(3, 17)
     veripy.list(['hello'], ['world'])
     veripy.dict({"hello": 1}, {"world": 2})
@@ -82,8 +82,14 @@ if __name__ == "__main__":
     veripy.file(*dir_files)
 
     # testing the document examples
-    veripy.file_path("veripy.py", "./test.py")
+    veripy.file_path("veripy.py", "./examples.py")
     veripy.dir_path("./", "../")
-    veripy.file(open("test.py","r"), open("veripy.py","r"))
+    veripy.file(open("examples.py","r"), open("veripy.py","r"))
+
+    # testing generator modules
+    test_gen = (i for i in range(1))
+    veripy.generator(test_gen)
+    test_gen.next()
+    veripy.empty_generator(test_gen)
 
     print("success")

@@ -2,6 +2,4 @@
 setup.cfg
 setup.py
 veripy/__init__.py
-veripy/hypothesis-test.py
-veripy/test.py
 veripy/veripy.py

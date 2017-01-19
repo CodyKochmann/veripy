@@ -1,7 +1,7 @@
 # veripy
 Shorthand asserts for those who love predictable code but don't have time for writing every assert in the world.
 
-##### Current Version: 2016.12.16
+##### Current Version: 2017.01.19
 
 ---
 
@@ -30,6 +30,8 @@ Shorthand asserts for those who love predictable code but don't have time for wr
 | `veripy.dir_path()` | path to an existing directory | `veripy.dir_path("./", "../")` |
 | `veripy.file_path()` | path to an existing file | `veripy.file_path("veripy.py", "./test.py")` |
 | `veripy.file()` | file | `veripy.file(open("test.py","r"), open("veripy.py","r"))` |
+| `veripy.generator()` | generator | `veripy.generator((i for i in range(1)))` |
+| `veripy.empty_generator()` | generator with no `.next()` value | `veripy.empty_generator((i for i in range(0)))` |
 
 ### Upcoming Features Being Considered:
 

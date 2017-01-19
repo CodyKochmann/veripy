@@ -3,6 +3,9 @@
 echo 'dont actually run this file'
 exit
 
+# make sure you update your README and setup.cfg
+# to the current date.
+
 # update the remote repo
 git add .
 git commit -m "yourmessage"
